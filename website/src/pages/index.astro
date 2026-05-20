@@ -1,0 +1,444 @@
+---
+import '../styles/global.css';
+
+const newUrl = 'ministry.beekorea.org';
+const newUrlHref = 'https://ministry.beekorea.org';
+
+const languages = [
+	{ code: 'en', label: 'English' },
+	{ code: 'ko', label: '한국어' },
+	{ code: 'es', label: 'Español' },
+	{ code: 'vi', label: 'Tiếng Việt' },
+	{ code: 'mn', label: 'Монгол' },
+	{ code: 'pt', label: 'Português' },
+	{ code: 'sw', label: 'Kiswahili' },
+	{ code: 'lg', label: 'Luganda' },
+	{ code: 'fr', label: 'Français' },
+	{ code: 'ne', label: 'नेपाली' },
+];
+
+const urlMono = `<span class="font-mono">${newUrl}</span>`;
+
+const translations = {
+	en: {
+		htmlLang: 'en',
+		title: "We've moved — ministry.beekorea.org",
+		description: `ministry-manager-v2.vercel.app has moved to ${newUrl}. Please update your bookmark.`,
+		heading: 'Ministry Manager has a new home',
+		cta: 'Go to the new site',
+		warning: `<strong>This page will stop working very shortly.</strong> Please update your bookmark to ${urlMono} today so you don't lose access.`,
+		saveTitle: 'Save to your home screen',
+		saveSubtitle: "So it's always one tap away — just like an app.",
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Open ${urlMono} in Safari.`,
+			'Tap the <strong>Share</strong> button at the bottom.',
+			'Scroll down and tap <strong>Add to Home Screen</strong>.',
+			'Tap <strong>Add</strong> in the top-right corner.',
+		],
+		android: [
+			`Open ${urlMono} in Chrome.`,
+			'Tap the <strong>menu</strong> (⋮) in the top-right.',
+			'Tap <strong>Add to Home screen</strong> (or <strong>Install app</strong>).',
+			'Tap <strong>Add</strong> to confirm.',
+		],
+		footer: 'Thank you for using Ministry Manager',
+	},
+	ko: {
+		htmlLang: 'ko',
+		title: '이전 안내 — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app 이 ${newUrl} 로 이전했습니다.`,
+		heading: 'Ministry Manager 가 새 주소로 이전했습니다',
+		cta: '새 사이트로 이동',
+		warning: `<strong>이 페이지는 곧 작동을 중단합니다.</strong> 접속이 끊기지 않도록 오늘 ${urlMono} 을 북마크해 주세요.`,
+		saveTitle: '홈 화면에 추가하기',
+		saveSubtitle: '앱처럼 한 번의 탭으로 열 수 있습니다.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Safari 에서 ${urlMono} 을 여세요.`,
+			'하단의 <strong>공유</strong> 버튼을 누르세요.',
+			'아래로 스크롤하여 <strong>홈 화면에 추가</strong>를 누르세요.',
+			'오른쪽 상단의 <strong>추가</strong>를 누르세요.',
+		],
+		android: [
+			`Chrome 에서 ${urlMono} 을 여세요.`,
+			'오른쪽 상단의 <strong>메뉴</strong> (⋮) 를 누르세요.',
+			'<strong>홈 화면에 추가</strong> (또는 <strong>앱 설치</strong>) 를 누르세요.',
+			'<strong>추가</strong>를 눌러 확인하세요.',
+		],
+		footer: 'Ministry Manager 를 이용해 주셔서 감사합니다',
+	},
+	es: {
+		htmlLang: 'es',
+		title: 'Nos hemos mudado — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app se ha mudado a ${newUrl}.`,
+		heading: 'Ministry Manager tiene una nueva dirección',
+		cta: 'Ir al nuevo sitio',
+		warning: `<strong>Esta página dejará de funcionar muy pronto.</strong> Actualiza tu marcador a ${urlMono} hoy para no perder el acceso.`,
+		saveTitle: 'Guardar en la pantalla de inicio',
+		saveSubtitle: 'Para que siempre esté a un toque — como una app.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Abre ${urlMono} en Safari.`,
+			'Toca el botón <strong>Compartir</strong> en la parte inferior.',
+			'Desplázate y toca <strong>Añadir a pantalla de inicio</strong>.',
+			'Toca <strong>Añadir</strong> en la esquina superior derecha.',
+		],
+		android: [
+			`Abre ${urlMono} en Chrome.`,
+			'Toca el <strong>menú</strong> (⋮) en la esquina superior derecha.',
+			'Toca <strong>Añadir a pantalla de inicio</strong> (o <strong>Instalar app</strong>).',
+			'Toca <strong>Añadir</strong> para confirmar.',
+		],
+		footer: 'Gracias por usar Ministry Manager',
+	},
+	vi: {
+		htmlLang: 'vi',
+		title: 'Chúng tôi đã chuyển — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app đã chuyển sang ${newUrl}.`,
+		heading: 'Ministry Manager có địa chỉ mới',
+		cta: 'Đi tới trang mới',
+		warning: `<strong>Trang này sẽ sớm ngừng hoạt động.</strong> Vui lòng cập nhật dấu trang sang ${urlMono} ngay hôm nay để không mất quyền truy cập.`,
+		saveTitle: 'Lưu vào màn hình chính',
+		saveSubtitle: 'Để luôn chỉ cách một lần chạm — như một ứng dụng.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Mở ${urlMono} trong Safari.`,
+			'Chạm nút <strong>Chia sẻ</strong> ở phía dưới.',
+			'Cuộn xuống và chạm <strong>Thêm vào màn hình chính</strong>.',
+			'Chạm <strong>Thêm</strong> ở góc trên bên phải.',
+		],
+		android: [
+			`Mở ${urlMono} trong Chrome.`,
+			'Chạm vào <strong>menu</strong> (⋮) ở góc trên bên phải.',
+			'Chạm <strong>Thêm vào màn hình chính</strong> (hoặc <strong>Cài đặt ứng dụng</strong>).',
+			'Chạm <strong>Thêm</strong> để xác nhận.',
+		],
+		footer: 'Cảm ơn bạn đã sử dụng Ministry Manager',
+	},
+	mn: {
+		htmlLang: 'mn',
+		title: 'Бид шилжсэн — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app нь ${newUrl} рүү шилжсэн.`,
+		heading: 'Ministry Manager шинэ хаягтай боллоо',
+		cta: 'Шинэ сайт руу очих',
+		warning: `<strong>Энэ хуудас удахгүй ажиллахаа болино.</strong> Хандах эрхээ алдахгүйн тулд өнөөдөр ${urlMono}-г хавчуурга болгож шинэчилнэ үү.`,
+		saveTitle: 'Нүүр дэлгэцэд хадгалах',
+		saveSubtitle: 'Аппликейшн шиг нэг товшилтоор нээгдэх болно.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Safari дээр ${urlMono}-г нээнэ үү.`,
+			'Доод талын <strong>Хуваалцах</strong> товчийг дарна уу.',
+			'Доош гүйлгээд <strong>Нүүр дэлгэцэд нэмэх</strong> товчийг дарна уу.',
+			'Баруун дээд буланд байрлах <strong>Нэмэх</strong> товчийг дарна уу.',
+		],
+		android: [
+			`Chrome дээр ${urlMono}-г нээнэ үү.`,
+			'Баруун дээд буланд байрлах <strong>цэс</strong> (⋮)-г дарна уу.',
+			'<strong>Нүүр дэлгэцэд нэмэх</strong> (эсвэл <strong>Аппликейшн суулгах</strong>)-г дарна уу.',
+			'Баталгаажуулахын тулд <strong>Нэмэх</strong> товчийг дарна уу.',
+		],
+		footer: 'Ministry Manager-г ашигласанд баярлалаа',
+	},
+	pt: {
+		htmlLang: 'pt',
+		title: 'Nós nos mudamos — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app foi movido para ${newUrl}.`,
+		heading: 'Ministry Manager tem um novo endereço',
+		cta: 'Ir para o novo site',
+		warning: `<strong>Esta página deixará de funcionar muito em breve.</strong> Atualize seu favorito para ${urlMono} hoje para não perder o acesso.`,
+		saveTitle: 'Salvar na tela inicial',
+		saveSubtitle: 'Para estar sempre a um toque de distância — como um app.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Abra ${urlMono} no Safari.`,
+			'Toque no botão <strong>Compartilhar</strong> na parte inferior.',
+			'Role para baixo e toque em <strong>Adicionar à Tela de Início</strong>.',
+			'Toque em <strong>Adicionar</strong> no canto superior direito.',
+		],
+		android: [
+			`Abra ${urlMono} no Chrome.`,
+			'Toque no <strong>menu</strong> (⋮) no canto superior direito.',
+			'Toque em <strong>Adicionar à tela inicial</strong> (ou <strong>Instalar app</strong>).',
+			'Toque em <strong>Adicionar</strong> para confirmar.',
+		],
+		footer: 'Obrigado por usar o Ministry Manager',
+	},
+	sw: {
+		htmlLang: 'sw',
+		title: 'Tumehama — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app imehamia ${newUrl}.`,
+		heading: 'Ministry Manager ina anwani mpya',
+		cta: 'Nenda kwenye tovuti mpya',
+		warning: `<strong>Ukurasa huu utaacha kufanya kazi hivi karibuni.</strong> Tafadhali sasisha alamisho yako kuwa ${urlMono} leo ili usipoteze ufikiaji.`,
+		saveTitle: 'Hifadhi kwenye skrini ya nyumbani',
+		saveSubtitle: 'Ili iwe karibu kwa mguso mmoja — kama programu.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Fungua ${urlMono} katika Safari.`,
+			'Gusa kitufe cha <strong>Shiriki</strong> chini.',
+			'Sogeza chini na ugonge <strong>Ongeza kwenye Skrini ya Nyumbani</strong>.',
+			'Gusa <strong>Ongeza</strong> kwenye kona ya juu kulia.',
+		],
+		android: [
+			`Fungua ${urlMono} katika Chrome.`,
+			'Gusa <strong>menyu</strong> (⋮) kwenye kona ya juu kulia.',
+			'Gusa <strong>Ongeza kwenye skrini ya nyumbani</strong> (au <strong>Sakinisha programu</strong>).',
+			'Gusa <strong>Ongeza</strong> ili kuthibitisha.',
+		],
+		footer: 'Asante kwa kutumia Ministry Manager',
+	},
+	lg: {
+		htmlLang: 'lg',
+		title: 'Tukyuse — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app ekyuse okudda ku ${newUrl}.`,
+		heading: 'Ministry Manager erina ennyumba empya',
+		cta: 'Genda ku site empya',
+		warning: `<strong>Olupapula luno lujja kulekera awo okukola mu kiseera kitono.</strong> Kyusa akabonero ko ku ${urlMono} leero oleme okufiirwa okuyingira.`,
+		saveTitle: 'Tereka ku home screen',
+		saveSubtitle: "Eyinze okubeera okumpi olw'okukwata omulundi gumu — nga app.",
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Ggula ${urlMono} mu Safari.`,
+			'Kwata akapande ka <strong>Share</strong> wansi.',
+			'Kkanyula wansi era okwate <strong>Add to Home Screen</strong>.',
+			'Kwata <strong>Add</strong> ku nsonda ya waggulu ku ddyo.',
+		],
+		android: [
+			`Ggula ${urlMono} mu Chrome.`,
+			'Kwata akapande ka <strong>menu</strong> (⋮) ku nsonda ya waggulu ku ddyo.',
+			'Kwata <strong>Add to Home screen</strong> (oba <strong>Install app</strong>).',
+			'Kwata <strong>Add</strong> okukakasa.',
+		],
+		footer: 'Webale okukozesa Ministry Manager',
+	},
+	fr: {
+		htmlLang: 'fr',
+		title: 'Nous avons déménagé — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app a déménagé vers ${newUrl}.`,
+		heading: 'Ministry Manager a une nouvelle adresse',
+		cta: 'Aller au nouveau site',
+		warning: `<strong>Cette page cessera de fonctionner très prochainement.</strong> Mettez à jour votre signet vers ${urlMono} dès aujourd'hui pour ne pas perdre l'accès.`,
+		saveTitle: "Enregistrer sur l'écran d'accueil",
+		saveSubtitle: 'Pour qu’il soit toujours à portée de doigt — comme une application.',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Ouvrez ${urlMono} dans Safari.`,
+			'Touchez le bouton <strong>Partager</strong> en bas.',
+			"Faites défiler et touchez <strong>Sur l'écran d'accueil</strong>.",
+			'Touchez <strong>Ajouter</strong> en haut à droite.',
+		],
+		android: [
+			`Ouvrez ${urlMono} dans Chrome.`,
+			'Touchez le <strong>menu</strong> (⋮) en haut à droite.',
+			"Touchez <strong>Ajouter à l'écran d'accueil</strong> (ou <strong>Installer l'application</strong>).",
+			'Touchez <strong>Ajouter</strong> pour confirmer.',
+		],
+		footer: 'Merci d’utiliser Ministry Manager',
+	},
+	ne: {
+		htmlLang: 'ne',
+		title: 'हामी सरेका छौं — ministry.beekorea.org',
+		description: `ministry-manager-v2.vercel.app ${newUrl} मा सरेको छ।`,
+		heading: 'Ministry Manager को नयाँ ठेगाना छ',
+		cta: 'नयाँ साइटमा जानुहोस्',
+		warning: `<strong>यो पृष्ठ छिट्टै काम गर्न बन्द हुनेछ।</strong> पहुँच नगुमाउन कृपया आज नै आफ्नो बुकमार्क ${urlMono} मा अद्यावधिक गर्नुहोस्।`,
+		saveTitle: 'गृह स्क्रिनमा सुरक्षित गर्नुहोस्',
+		saveSubtitle: 'ताकि यो सधैं एक ट्यापको दूरीमा होस् — एउटा एप जस्तै।',
+		iosTitle: 'iPhone / iPad (Safari)',
+		androidTitle: 'Android (Chrome)',
+		ios: [
+			`Safari मा ${urlMono} खोल्नुहोस्।`,
+			'तल रहेको <strong>Share</strong> बटनमा ट्याप गर्नुहोस्।',
+			'तल स्क्रोल गर्नुहोस् र <strong>Add to Home Screen</strong> मा ट्याप गर्नुहोस्।',
+			'माथिल्लो दायाँ कुनामा रहेको <strong>Add</strong> मा ट्याप गर्नुहोस्।',
+		],
+		android: [
+			`Chrome मा ${urlMono} खोल्नुहोस्।`,
+			'माथिल्लो दायाँ कुनामा रहेको <strong>मेनु</strong> (⋮) मा ट्याप गर्नुहोस्।',
+			'<strong>Add to Home screen</strong> (वा <strong>Install app</strong>) मा ट्याप गर्नुहोस्।',
+			'पुष्टि गर्न <strong>Add</strong> मा ट्याप गर्नुहोस्।',
+		],
+		footer: 'Ministry Manager प्रयोग गर्नुभएकोमा धन्यवाद',
+	},
+};
+
+const en = translations.en;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title id="page-title">{en.title}</title>
+		<meta id="page-description" name="description" content={en.description} />
+	</head>
+	<body class="min-h-screen bg-cream text-slate-800 antialiased">
+		<main class="mx-auto flex max-w-xl flex-col items-center px-5 py-10 sm:py-14">
+			<header class="flex w-full items-center justify-between">
+				<img
+					src="/bee-logo.png"
+					alt="Bee Korea"
+					class="h-10 w-auto sm:h-12"
+				/>
+				<select
+					id="lang-select"
+					aria-label="Language"
+					class="rounded-md border border-slate-200 bg-white px-2 py-1 text-sm text-slate-700 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+				>
+					{languages.map((l) => (
+						<option value={l.code}>{l.label}</option>
+					))}
+				</select>
+			</header>
+
+			<h1 id="i18n-heading" class="mt-10 text-center text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+				{en.heading}
+			</h1>
+
+			<p class="mt-5 text-center text-sm sm:text-base text-slate-500">
+				<span class="font-mono line-through">ministry-manager-v2.vercel.app</span>
+				<span class="mx-2 text-primary">→</span>
+				<a
+					href={newUrlHref}
+					class="font-mono font-semibold text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+				>
+					{newUrl}
+				</a>
+			</p>
+
+			<a
+				href={newUrlHref}
+				class="mt-7 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary-hover active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2"
+			>
+				<span id="i18n-cta">{en.cta}</span>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					<path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638l-3.97-3.97a.75.75 0 011.06-1.06l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 11-1.06-1.06l3.97-3.97H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+				</svg>
+			</a>
+
+			<p
+				id="i18n-warning"
+				class="mt-8 w-full rounded-xl border border-primary-border bg-primary-soft px-4 py-3 text-center text-sm sm:text-base text-slate-700 leading-relaxed"
+				set:html={en.warning}
+			></p>
+
+			<section class="mt-12 w-full">
+				<h2 id="i18n-save-title" class="text-center text-lg font-semibold text-slate-900">
+					{en.saveTitle}
+				</h2>
+				<p id="i18n-save-subtitle" class="mt-1 text-center text-sm text-slate-500">
+					{en.saveSubtitle}
+				</p>
+
+				<div class="mt-6 grid gap-4 sm:grid-cols-2">
+					<div class="rounded-xl border border-slate-200 bg-white p-5">
+						<h3 id="i18n-ios-title" class="font-semibold text-slate-900">{en.iosTitle}</h3>
+						<ol id="i18n-ios-list" class="mt-3 space-y-2 text-sm text-slate-700">
+							{en.ios.map((step, i) => (
+								<li class="grid grid-cols-[1.25rem_1fr] gap-2">
+									<span class="font-semibold text-primary">{i + 1}.</span>
+									<span set:html={step}></span>
+								</li>
+							))}
+						</ol>
+					</div>
+
+					<div class="rounded-xl border border-slate-200 bg-white p-5">
+						<h3 id="i18n-android-title" class="font-semibold text-slate-900">{en.androidTitle}</h3>
+						<ol id="i18n-android-list" class="mt-3 space-y-2 text-sm text-slate-700">
+							{en.android.map((step, i) => (
+								<li class="grid grid-cols-[1.25rem_1fr] gap-2">
+									<span class="font-semibold text-primary">{i + 1}.</span>
+									<span set:html={step}></span>
+								</li>
+							))}
+						</ol>
+					</div>
+				</div>
+			</section>
+
+			<footer id="i18n-footer" class="mt-12 text-center text-xs text-slate-400">
+				{en.footer}
+			</footer>
+		</main>
+
+		<script id="i18n-data" type="application/json" set:html={JSON.stringify(translations)}></script>
+
+		<script is:inline>
+			(function () {
+				const data = JSON.parse(document.getElementById('i18n-data').textContent);
+				const supported = Object.keys(data);
+				const select = document.getElementById('lang-select');
+
+				function pickLang() {
+					const stored = localStorage.getItem('mmv2-lang');
+					if (stored && supported.includes(stored)) return stored;
+					const candidates = (navigator.languages && navigator.languages.length)
+						? navigator.languages
+						: [navigator.language || 'en'];
+					for (const c of candidates) {
+						const base = (c || '').toLowerCase().split('-')[0];
+						if (supported.includes(base)) return base;
+					}
+					return 'en';
+				}
+
+				function setText(id, value) {
+					const el = document.getElementById(id);
+					if (el) el.textContent = value;
+				}
+				function setHTML(id, value) {
+					const el = document.getElementById(id);
+					if (el) el.innerHTML = value;
+				}
+				function setList(id, steps) {
+					const el = document.getElementById(id);
+					if (!el) return;
+					el.innerHTML = steps.map((s, i) =>
+						'<li class="grid grid-cols-[1.25rem_1fr] gap-2"><span class="font-semibold text-primary">' +
+						(i + 1) + '.</span><span>' + s + '</span></li>'
+					).join('');
+				}
+
+				function apply(lang) {
+					const t = data[lang] || data.en;
+					document.documentElement.lang = t.htmlLang;
+					document.getElementById('page-title').textContent = t.title;
+					document.getElementById('page-description').setAttribute('content', t.description);
+					setText('i18n-heading', t.heading);
+					setText('i18n-cta', t.cta);
+					setHTML('i18n-warning', t.warning);
+					setText('i18n-save-title', t.saveTitle);
+					setText('i18n-save-subtitle', t.saveSubtitle);
+					setText('i18n-ios-title', t.iosTitle);
+					setText('i18n-android-title', t.androidTitle);
+					setList('i18n-ios-list', t.ios);
+					setList('i18n-android-list', t.android);
+					setText('i18n-footer', t.footer);
+					select.value = lang;
+				}
+
+				const initial = pickLang();
+				apply(initial);
+
+				select.addEventListener('change', function (e) {
+					localStorage.setItem('mmv2-lang', e.target.value);
+					apply(e.target.value);
+				});
+			})();
+		</script>
+	</body>
+</html>
